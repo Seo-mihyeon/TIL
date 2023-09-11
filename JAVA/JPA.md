@@ -25,3 +25,8 @@ public class Student {
     // Getter와 Setter 메서드는 생략
 }
 ```
+
+1. @Entity를 사용해서 해당 클래스가 데이터베이스 테이블과 매핑 되는 엔티티임을 표현한다.
+2. @Id는 해당 클래스의 primary key 임을 나타낸다.
+3. @GeneratedValue 는 해당 키 값이 자동으로 생성 되도록 설정한다.
+
