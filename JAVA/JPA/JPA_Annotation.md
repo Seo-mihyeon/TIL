@@ -72,3 +72,52 @@ public class ExTable{
 ```
 
 ------------------------------------------------
+## 3. @Column
+- 테이블 컬럼과 매핑한다.
+
+### **🛠️속성**
+    1. name
+       : 필드와 매핑할 테이블 컬럼명 지정
+    2. insertable (true/false)
+       : 엔티티 저장시 필드값 저장 유/무
+    3. updatable (true/false)
+       : 엔티티 수정시 필드값 저장 유/무
+    4. table
+       : 하나의 엔티티를 두개 이상의 테이블에 매핑할 때 사용
+    5. nullable (true/flase)
+       : null값 허용 여부
+    6. unique
+       : 유니크 제약조건 부여
+    7. columnDefinition
+        : 데이터베이스 컬럼 정보를 직접 부여
+    8. length
+        : 문자 길이 제약조건 부여 (String 타입일때만)
+    9. precision
+        : 소수점을 포함한 전체 자릿수 여부 (BigDecimal 타입일때만)
+    10. scale
+        : 소수의 자릿수 (BigDecimal 타입일때만)
+
+### **👀주의사항**
+    ❌
+
+### **✏️예시**
+```java
+@Entity // @Entity(name = "ExT" )이름 직접 지정
+public class ExTable{
+    @Id
+    @GeneratedValue
+    @Column(insertable = false)
+    private Long id;
+    
+    @Column(updatable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private String age;
+
+    ...
+
+}
+```
+
+------------------------------------------------
